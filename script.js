@@ -1,5 +1,5 @@
 const WHATSAPP_NUMBER = '201102612084';
-const ADMIN_PASSWORD = 'mohamed123#';
+const ADMIN_PASSWORD = '103169Mm';
 let cart = JSON.parse(localStorage.getItem('nxt8_cart')) || [];
 let currentProductColors = [];
 
