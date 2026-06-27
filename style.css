@@ -12,9 +12,9 @@
     --gray: #888888;
     --light-gray: #cccccc;
     --white: #ffffff;
-    --gold: #f29b05;
-    --gold-light: #f29b05;
-    --gold-dark:  #f29b05;
+    --gold: #d4af37;
+    --gold-light: #e8c547;
+    --gold-dark: #b8960c;
     --bg-primary: #0a0a0a;
     --bg-secondary: #111111;
     --bg-card: rgba(255,255,255,0.03);
@@ -1068,6 +1068,7 @@ ul {
     font-weight: 600;
     margin-bottom: 10px;
     display: -webkit-box;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -1811,6 +1812,7 @@ ul {
 
 .price-range input[type="range"] {
     width: 100%;
+    -webkit-appearance: none;
     height: 4px;
     background: var(--dark-3);
     border-radius: 4px;
@@ -3187,4 +3189,469 @@ ul {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* ============================================
+   ADMIN PANEL - MOBILE RESPONSIVE FIX
+   ============================================ */
+
+/* Admin Login Mobile */
+@media (max-width: 480px) {
+    .admin-login-card {
+        padding: 35px 25px;
+    }
+    
+    .admin-login-logo {
+        font-size: 40px;
+    }
+    
+    .admin-login-card h2 {
+        font-size: 20px;
+    }
+}
+
+/* Admin Dashboard Mobile - Main Layout */
+@media (max-width: 968px) {
+    .admin-sidebar {
+        width: 260px;
+        left: -280px;
+        box-shadow: 5px 0 30px rgba(0,0,0,0.5);
+    }
+    
+    .admin-sidebar.active {
+        left: 0;
+    }
+    
+    .admin-main {
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    .admin-menu-toggle {
+        display: block !important;
+        background: var(--gold);
+        color: var(--black);
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        font-size: 18px;
+    }
+    
+    .admin-header {
+        padding: 15px 20px;
+        gap: 15px;
+    }
+    
+    .admin-header h2 {
+        font-size: 18px;
+    }
+    
+    .admin-welcome {
+        display: none;
+    }
+    
+    .admin-section {
+        padding: 20px 15px;
+    }
+}
+
+/* Stats Grid Mobile */
+@media (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px;
+    }
+    
+    .stat-card {
+        padding: 18px 15px;
+        gap: 12px;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .stat-card-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+    
+    .stat-card-info h3 {
+        font-size: 18px;
+    }
+    
+    .stat-card-info p {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px;
+    }
+    
+    .stat-card {
+        padding: 15px 10px;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .stat-card-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+    
+    .stat-card-info h3 {
+        font-size: 16px;
+    }
+    
+    .stat-card-info p {
+        font-size: 9px;
+        letter-spacing: 0.5px;
+    }
+}
+
+@media (max-width: 360px) {
+    .stats-grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .stat-card {
+        flex-direction: row;
+        text-align: left;
+        align-items: center;
+    }
+}
+
+/* Charts Mobile */
+@media (max-width: 768px) {
+    .charts-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px;
+    }
+    
+    .chart-card {
+        padding: 20px 15px;
+    }
+    
+    .chart-card h3 {
+        font-size: 16px;
+    }
+    
+    .bar-chart {
+        gap: 10px;
+        height: 150px;
+    }
+    
+    .bar {
+        width: 30px;
+    }
+    
+    .bar span {
+        font-size: 9px;
+    }
+    
+    .donut-chart {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .donut-chart::after {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .donut-legend {
+        font-size: 11px;
+    }
+    
+    .donut-legend div {
+        font-size: 11px;
+    }
+}
+
+/* Admin Tables Mobile */
+@media (max-width: 768px) {
+    .admin-table-card {
+        padding: 18px 12px;
+    }
+    
+    .admin-table-card h3 {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+    
+    .table-responsive {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin: 0 -12px;
+        padding: 0 12px;
+    }
+    
+    .admin-table {
+        min-width: 600px;
+    }
+    
+    .admin-table th,
+    .admin-table td {
+        padding: 10px 8px;
+        font-size: 12px;
+    }
+    
+    .admin-table th {
+        font-size: 10px;
+    }
+    
+    .product-thumb {
+        width: 40px !important;
+        height: 40px !important;
+    }
+    
+    .status-badge {
+        padding: 4px 8px;
+        font-size: 9px;
+    }
+    
+    .action-btn {
+        padding: 5px 8px;
+        font-size: 11px;
+        margin-right: 3px;
+    }
+}
+
+/* Section Header Mobile */
+@media (max-width: 768px) {
+    .admin-section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+    
+    .admin-section-header h3 {
+        font-size: 20px;
+    }
+    
+    .admin-section-header .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Product Form Mobile */
+@media (max-width: 768px) {
+    .product-form-card {
+        padding: 20px 15px;
+    }
+    
+    .product-form-card h3 {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr !important;
+        gap: 15px;
+    }
+    
+    .form-group {
+        margin-bottom: 15px;
+    }
+    
+    .form-group label {
+        font-size: 12px;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 12px 15px;
+        font-size: 14px;
+        font-size: 16px; /* Prevent zoom on iOS */
+    }
+    
+    .image-upload {
+        padding: 25px 15px;
+        min-height: 130px;
+    }
+    
+    .upload-placeholder i {
+        font-size: 32px;
+    }
+    
+    .upload-placeholder p {
+        font-size: 13px;
+    }
+    
+    .image-preview {
+        max-width: 150px;
+        max-height: 150px;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .form-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Settings Mobile */
+@media (max-width: 768px) {
+    .settings-card {
+        padding: 20px 15px;
+    }
+    
+    .settings-card h4 {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+    
+    .settings-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .settings-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Admin Sidebar Overlay */
+@media (max-width: 968px) {
+    .admin-sidebar::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.7);
+        z-index: -1;
+        transition: var(--transition);
+        opacity: 0;
+    }
+    
+    .admin-sidebar.active::before {
+        left: 280px;
+        opacity: 1;
+        width: 100vw;
+    }
+}
+
+/* Admin Sidebar Items Mobile */
+@media (max-width: 768px) {
+    .admin-sidebar-header {
+        padding: 25px 20px;
+    }
+    
+    .admin-logo {
+        font-size: 30px;
+    }
+    
+    .admin-sidebar-header p {
+        font-size: 11px;
+    }
+    
+    .admin-nav-item {
+        padding: 14px 25px;
+        font-size: 14px;
+    }
+    
+    .admin-sidebar-footer {
+        padding: 15px;
+    }
+}
+
+/* Form checkboxes mobile */
+@media (max-width: 768px) {
+    .form-group label input[type="checkbox"] {
+        margin-right: 8px;
+        transform: scale(1.2);
+    }
+    
+    .form-group label {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+    }
+}
+
+/* Touch optimization */
+@media (max-width: 768px) {
+    .admin-nav-item,
+    .action-btn,
+    .stat-card {
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+    }
+    
+    .admin-nav-item:active {
+        background: rgba(212,175,55,0.1);
+    }
+    
+    .action-btn:active {
+        transform: scale(0.95);
+    }
+}
+
+/* Close sidebar when clicking outside (visual hint) */
+@media (max-width: 968px) {
+    .admin-dashboard {
+        position: relative;
+    }
+    
+    body.sidebar-open {
+        overflow: hidden;
+    }
+}
+
+/* Recent Orders Table Mobile - Hide some columns */
+@media (max-width: 480px) {
+    .admin-table thead th:nth-child(3),
+    .admin-table tbody td:nth-child(3) {
+        display: none;
+    }
+    
+    .admin-table {
+        min-width: 500px;
+    }
+}
+
+/* Header on small mobile */
+@media (max-width: 480px) {
+    .admin-header {
+        padding: 12px 15px;
+    }
+    
+    .admin-header h2 {
+        font-size: 16px;
+    }
+    
+    .admin-menu-toggle {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+}
+
+/* Fix form on small devices */
+@media (max-width: 480px) {
+    .product-form-card {
+        padding: 18px 12px;
+    }
+    
+    .admin-table-card {
+        padding: 15px 10px;
+    }
+    
+    .admin-section {
+        padding: 15px 10px;
+    }
 }
