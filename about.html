@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NXT8 Fashion | About Us</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-logo">NXT<span>8</span></div>
+            <div class="loader-bar"><div class="loader-progress"></div></div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-dark" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="logo.png" alt="NXT8" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <span class="logo-text" style="display:none;">NXT<span class="gold">8</span></span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Store</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="admin.html" class="admin-link"><i class="fas fa-lock"></i> Admin</a></li>
+            </ul>
+            <div class="nav-actions">
+                <div class="cart-icon" id="cartIcon">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header"><h3>Shopping Bag</h3><button class="cart-close" id="cartClose"><i class="fas fa-times"></i></button></div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer">
+            <div class="cart-total"><span>Total:</span><span id="cartTotal">EGP 0</span></div>
+            <button class="btn btn-gold btn-full" onclick="checkoutWhatsApp()">Order via WhatsApp</button>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <section class="page-header">
+        <div class="page-header-overlay"></div>
+        <div class="container">
+            <h1>About <span class="gold-text">Us</span></h1>
+            <nav class="breadcrumb">
+                <a href="index.html">Home</a> <span>/</span> <span>About</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="section about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image" data-aos="fade-right">
+                    <div class="about-img-box" style="background: linear-gradient(135deg, #1a1a2e, #16213e); display:flex; align-items:center; justify-content:center; min-height:500px; border-radius:20px;">
+                        <div style="text-align:center;">
+                            <div style="font-size:80px; font-weight:900; font-family:'Playfair Display'; color:var(--gold);">NXT8</div>
+                            <div style="font-size:20px; color:#fff; letter-spacing:5px;">FASHION</div>
+                        </div>
+                    </div>
+                    <div class="about-experience">
+                        <span class="exp-number">2025</span>
+                        <span class="exp-text">Est. Year</span>
+                    </div>
+                </div>
+                <div class="about-content" data-aos="fade-left">
+                    <span class="section-tag">OUR STORY</span>
+                    <h2>Redefining Fashion for the <span class="gold-text">Next Generation</span></h2>
+                    <p>NXT8 Fashion was born from a vision to create premium, contemporary clothing that combines cutting-edge design with exceptional quality. We believe fashion is not just about clothing — it's about expressing who you are.</p>
+                    <p>Our team of designers works tirelessly to bring you the latest trends while maintaining the timeless elegance that defines our brand. Every piece in our collection is crafted with attention to detail and a passion for perfection.</p>
+                    <div class="about-values">
+                        <div class="value-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Premium Quality Materials</span>
+                        </div>
+                        <div class="value-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Unique & Trendy Designs</span>
+                        </div>
+                        <div class="value-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Affordable Luxury</span>
+                        </div>
+                        <div class="value-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Customer Satisfaction First</span>
+                        </div>
+                    </div>
+                    <a href="products.html" class="btn btn-gold btn-lg" style="margin-top:30px;">Explore Collection</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="section" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="mission-grid">
+                <div class="mission-card" data-aos="fade-up">
+                    <div class="mission-icon"><i class="fas fa-bullseye"></i></div>
+                    <h3>Our Mission</h3>
+                    <p>To provide premium fashion that empowers individuals to express their unique style with confidence, while maintaining the highest standards of quality and sustainability.</p>
+                </div>
+                <div class="mission-card" data-aos="fade-up" data-delay="100">
+                    <div class="mission-icon"><i class="fas fa-eye"></i></div>
+                    <h3>Our Vision</h3>
+                    <p>To become the leading fashion brand in the Middle East, setting trends and inspiring the next generation of fashion-forward individuals.</p>
+                </div>
+                <div class="mission-card" data-aos="fade-up" data-delay="200">
+                    <div class="mission-icon"><i class="fas fa-heart"></i></div>
+                    <h3>Our Values</h3>
+                    <p>Quality, Innovation, Integrity, and Customer Satisfaction are the pillars that guide everything we do at NXT8 Fashion.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team -->
+    <section class="section team-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">THE TEAM</span>
+                <h2 class="section-title">Meet Our Team</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="team-grid">
+                <div class="team-card" data-aos="fade-up">
+                    <div class="team-img" style="background: linear-gradient(135deg, var(--gold), #b8860b); display:flex; align-items:center; justify-content:center;">
+                        <i class="fas fa-user" style="font-size:60px; color:#000;"></i>
+                    </div>
+                    <h4>Mohamed</h4>
+                    <p>Founder & CEO</p>
+                    <div class="team-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="team-card" data-aos="fade-up" data-delay="100">
+                    <div class="team-img" style="background: linear-gradient(135deg, #333, #111); display:flex; align-items:center; justify-content:center;">
+                        <i class="fas fa-user" style="font-size:60px; color:var(--gold);"></i>
+                    </div>
+                    <h4>Design Team</h4>
+                    <p>Creative Directors</p>
+                    <div class="team-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="team-card" data-aos="fade-up" data-delay="200">
+                    <div class="team-img" style="background: linear-gradient(135deg, #1a1a2e, #16213e); display:flex; align-items:center; justify-content:center;">
+                        <i class="fas fa-users" style="font-size:60px; color:var(--gold);"></i>
+                    </div>
+                    <h4>Support Team</h4>
+                    <p>Customer Success</p>
+                    <div class="team-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <div class="footer-logo">NXT<span class="gold">8</span></div>
+                        <p>Premium fashion for the modern generation.</p>
+                        <div class="footer-social">
+                            <a href="https://www.facebook.com/profile.php?id=61591100455602" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/nxt8fashion221" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.tiktok.com/@nxt8.fashion" target="_blank"><i class="fab fa-tiktok"></i></a>
+                            <a href="tel:01146631132"><i class="fas fa-phone"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Quick Links</h4>
+                        <ul><li><a href="index.html">Home</a></li><li><a href="products.html">Store</a></li><li><a href="contact.html">Contact</a></li></ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Contact Info</h4>
+                        <ul class="contact-info"><li><i class="fas fa-phone"></i> 01146631132</li><li><i class="fab fa-whatsapp"></i> 01102612084</li></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom"><div class="container"><p>&copy; 2025 NXT8 Fashion. All Rights Reserved.</p></div></div>
+    </footer>
+
+    <a href="https://wa.me/201102612084" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+    <button class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></button>
+    <script src="script.js"></script>
+</body>
+</html>

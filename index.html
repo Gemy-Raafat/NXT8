@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NXT8 Fashion | Premium Clothing Brand</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-logo">NXT<span>8</span></div>
+            <div class="loader-bar"><div class="loader-progress"></div></div>
+            <p class="loader-text">Loading Fashion...</p>
+        </div>
+    </div>
+
+    <!-- Cursor -->
+    <div class="custom-cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursorFollower"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="logo.png" alt="NXT8" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <span class="logo-text" style="display:none;">NXT<span class="gold">8</span></span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="products.html">Store</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="admin.html" class="admin-link"><i class="fas fa-lock"></i> Admin</a></li>
+            </ul>
+            <div class="nav-actions">
+                <div class="cart-icon" id="cartIcon">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Shopping Bag</h3>
+            <button class="cart-close" id="cartClose"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">EGP 0</span>
+            </div>
+            <button class="btn btn-gold btn-full" onclick="checkoutWhatsApp()">Order via WhatsApp</button>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <div class="hero-overlay"></div>
+            <div class="hero-particles" id="heroParticles"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge" data-aos="fade-down">NEW COLLECTION 2025</div>
+            <h1 class="hero-title" data-aos="fade-up">
+                <span class="hero-line">Define Your</span>
+                <span class="hero-line gold-text">Style</span>
+                <span class="hero-line">With NXT8</span>
+            </h1>
+            <p class="hero-subtitle" data-aos="fade-up" data-delay="200">Premium fashion for the modern generation. Elevate your wardrobe with cutting-edge designs.</p>
+            <div class="hero-buttons" data-aos="fade-up" data-delay="400">
+                <a href="products.html" class="btn btn-gold btn-lg">Shop Now <i class="fas fa-arrow-right"></i></a>
+                <a href="about.html" class="btn btn-outline btn-lg">Discover More</a>
+            </div>
+            <div class="hero-stats" data-aos="fade-up" data-delay="600">
+                <div class="stat-item">
+                    <span class="stat-number" data-count="500">0</span>+
+                    <span class="stat-label">Products</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="10000">0</span>+
+                    <span class="stat-label">Customers</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="50">0</span>+
+                    <span class="stat-label">Brands</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <div class="scroll-indicator">
+                <div class="scroll-line"></div>
+                <span>Scroll Down</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="section categories-section" id="categories">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">CATEGORIES</span>
+                <h2 class="section-title">Shop By Category</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card" data-aos="fade-up" data-delay="100" onclick="location.href='products.html?cat=men'">
+                    <div class="category-img" style="background: linear-gradient(135deg, #1a1a2e, #16213e);">
+                        <i class="fas fa-male" style="font-size:60px;color:var(--gold);"></i>
+                    </div>
+                    <div class="category-overlay">
+                        <h3>Men's</h3>
+                        <p>Explore Collection</p>
+                        <span class="category-arrow"><i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+                <div class="category-card" data-aos="fade-up" data-delay="200" onclick="location.href='products.html?cat=women'">
+                    <div class="category-img" style="background: linear-gradient(135deg, #2d1b69, #11001c);">
+                        <i class="fas fa-female" style="font-size:60px;color:var(--gold);"></i>
+                    </div>
+                    <div class="category-overlay">
+                        <h3>Women's</h3>
+                        <p>Explore Collection</p>
+                        <span class="category-arrow"><i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+                <div class="category-card" data-aos="fade-up" data-delay="300" onclick="location.href='products.html?cat=accessories'">
+                    <div class="category-img" style="background: linear-gradient(135deg, #1a1a1a, #333);">
+                        <i class="fas fa-gem" style="font-size:60px;color:var(--gold);"></i>
+                    </div>
+                    <div class="category-overlay">
+                        <h3>Accessories</h3>
+                        <p>Explore Collection</p>
+                        <span class="category-arrow"><i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+                <div class="category-card" data-aos="fade-up" data-delay="400" onclick="location.href='products.html?cat=shoes'">
+                    <div class="category-img" style="background: linear-gradient(135deg, #0d0d0d, #262626);">
+                        <i class="fas fa-shoe-prints" style="font-size:60px;color:var(--gold);"></i>
+                    </div>
+                    <div class="category-overlay">
+                        <h3>Shoes</h3>
+                        <p>Explore Collection</p>
+                        <span class="category-arrow"><i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="section featured-section" id="featured">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">TRENDING NOW</span>
+                <h2 class="section-title">Featured Products</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="products-slider" id="featuredProducts"></div>
+            <div class="slider-controls">
+                <button class="slider-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+                <button class="slider-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo Banner -->
+    <section class="promo-banner" data-aos="fade-up">
+        <div class="promo-content">
+            <span class="promo-tag">LIMITED TIME OFFER</span>
+            <h2>Up to <span class="gold-text">50% OFF</span></h2>
+            <p>On selected items. Don't miss out on our biggest sale of the season.</p>
+            <a href="products.html" class="btn btn-gold btn-lg">Shop Sale <i class="fas fa-fire"></i></a>
+        </div>
+    </section>
+
+    <!-- New Arrivals -->
+    <section class="section arrivals-section" id="arrivals">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">JUST DROPPED</span>
+                <h2 class="section-title">New Arrivals</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="arrivals-grid" id="newArrivals"></div>
+            <div class="text-center" style="margin-top:40px;">
+                <a href="products.html" class="btn btn-outline btn-lg">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="section features-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">WHY NXT8</span>
+                <h2 class="section-title">Why Choose Us</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up" data-delay="100">
+                    <div class="feature-icon"><i class="fas fa-truck"></i></div>
+                    <h3>Fast Delivery</h3>
+                    <p>Free shipping on all orders. Fast & reliable delivery across Egypt.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-delay="200">
+                    <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Premium Quality</h3>
+                    <p>Only the finest materials and craftsmanship in every piece.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-delay="300">
+                    <div class="feature-icon"><i class="fas fa-exchange-alt"></i></div>
+                    <h3>Easy Returns</h3>
+                    <p>Hassle-free returns within 14 days of purchase.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-delay="400">
+                    <div class="feature-icon"><i class="fas fa-headset"></i></div>
+                    <h3>24/7 Support</h3>
+                    <p>Our team is always here to help you with anything.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="section reviews-section" id="reviews">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">TESTIMONIALS</span>
+                <h2 class="section-title">What Our Customers Say</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="reviews-slider" id="reviewsSlider">
+                <div class="review-card" data-aos="fade-up">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Amazing quality and style! NXT8 has completely transformed my wardrobe. The attention to detail is incredible."</p>
+                    <div class="review-author">
+                        <div class="review-avatar">A</div>
+                        <div>
+                            <h4>Ahmed Mohamed</h4>
+                            <span>Verified Buyer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card" data-aos="fade-up" data-delay="100">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Best fashion brand in Egypt! The designs are unique and the fabric quality is outstanding. Highly recommend."</p>
+                    <div class="review-author">
+                        <div class="review-avatar">S</div>
+                        <div>
+                            <h4>Sara Ali</h4>
+                            <span>Verified Buyer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card" data-aos="fade-up" data-delay="200">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="review-text">"Fast delivery and excellent customer service. The clothes fit perfectly and look even better in person."</p>
+                    <div class="review-author">
+                        <div class="review-avatar">O</div>
+                        <div>
+                            <h4>Omar Hassan</h4>
+                            <span>Verified Buyer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section" id="newsletter">
+        <div class="container">
+            <div class="newsletter-content" data-aos="fade-up">
+                <div class="newsletter-icon"><i class="fas fa-envelope-open-text"></i></div>
+                <h2>Stay in the <span class="gold-text">Loop</span></h2>
+                <p>Subscribe to our newsletter and get 10% off your first order, plus exclusive updates on new arrivals and special offers.</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn btn-gold">Subscribe <i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Feed -->
+    <section class="section instagram-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">@NXT8FASHION</span>
+                <h2 class="section-title">Follow Us on Instagram</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="instagram-grid">
+                <div class="insta-item" data-aos="fade-up" style="background:linear-gradient(135deg,#1a1a2e,#16213e);"><i class="fab fa-instagram"></i></div>
+                <div class="insta-item" data-aos="fade-up" data-delay="50" style="background:linear-gradient(135deg,#2d1b69,#11001c);"><i class="fab fa-instagram"></i></div>
+                <div class="insta-item" data-aos="fade-up" data-delay="100" style="background:linear-gradient(135deg,#0d0d0d,#333);"><i class="fab fa-instagram"></i></div>
+                <div class="insta-item" data-aos="fade-up" data-delay="150" style="background:linear-gradient(135deg,#1a1a1a,#444);"><i class="fab fa-instagram"></i></div>
+                <div class="insta-item" data-aos="fade-up" data-delay="200" style="background:linear-gradient(135deg,#2c2c2c,#1a1a1a);"><i class="fab fa-instagram"></i></div>
+                <div class="insta-item" data-aos="fade-up" data-delay="250" style="background:linear-gradient(135deg,#16213e,#1a1a2e);"><i class="fab fa-instagram"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <div class="footer-logo">NXT<span class="gold">8</span></div>
+                        <p>Premium fashion for the modern generation. Elevating style since 2025.</p>
+                        <div class="footer-social">
+                            <a href="https://www.facebook.com/profile.php?id=61591100455602" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/nxt8fashion221" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.tiktok.com/@nxt8.fashion" target="_blank"><i class="fab fa-tiktok"></i></a>
+                            <a href="tel:01146631132"><i class="fas fa-phone"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="products.html">Store</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Categories</h4>
+                        <ul>
+                            <li><a href="products.html?cat=men">Men's Wear</a></li>
+                            <li><a href="products.html?cat=women">Women's Wear</a></li>
+                            <li><a href="products.html?cat=accessories">Accessories</a></li>
+                            <li><a href="products.html?cat=shoes">Shoes</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Contact Info</h4>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-phone"></i> 01146631132</li>
+                            <li><i class="fab fa-whatsapp"></i> 01102612084</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Egypt</li>
+                            <li><i class="fas fa-envelope"></i> info@nxt8fashion.com</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 NXT8 Fashion. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/201102612084" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>

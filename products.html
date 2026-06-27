@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NXT8 Fashion | Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-logo">NXT<span>8</span></div>
+            <div class="loader-bar"><div class="loader-progress"></div></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-dark" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="logo.png" alt="NXT8" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <span class="logo-text" style="display:none;">NXT<span class="gold">8</span></span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html" class="active">Store</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="admin.html" class="admin-link"><i class="fas fa-lock"></i> Admin</a></li>
+            </ul>
+            <div class="nav-actions">
+                <div class="cart-icon" id="cartIcon">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Shopping Bag</h3>
+            <button class="cart-close" id="cartClose"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">EGP 0</span>
+            </div>
+            <button class="btn btn-gold btn-full" onclick="checkoutWhatsApp()">Order via WhatsApp</button>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-overlay"></div>
+        <div class="container">
+            <h1>Our <span class="gold-text">Store</span></h1>
+            <nav class="breadcrumb">
+                <a href="index.html">Home</a> <span>/</span> <span>Store</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Store Section -->
+    <section class="section store-section">
+        <div class="container">
+            <div class="store-layout">
+                <!-- Filters Sidebar -->
+                <aside class="store-filters" id="storeFilters">
+                    <div class="filter-header">
+                        <h3>Filters</h3>
+                        <button class="filter-close" id="filterClose"><i class="fas fa-times"></i></button>
+                    </div>
+                    <div class="filter-group">
+                        <h4>Search</h4>
+                        <div class="search-box">
+                            <input type="text" id="searchInput" placeholder="Search products...">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <h4>Categories</h4>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="radio" name="category" value="all" checked> All
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="category" value="men"> Men's
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="category" value="women"> Women's
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="category" value="accessories"> Accessories
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="category" value="shoes"> Shoes
+                            </label>
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <h4>Price Range</h4>
+                        <div class="price-range">
+                            <input type="range" id="priceRange" min="0" max="5000" value="5000" step="50">
+                            <div class="price-labels">
+                                <span>EGP 0</span>
+                                <span id="priceValue">EGP 5000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <h4>Sort By</h4>
+                        <select id="sortSelect" class="filter-select">
+                            <option value="default">Default</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="name">Name: A-Z</option>
+                            <option value="newest">Newest First</option>
+                        </select>
+                    </div>
+                </aside>
+
+                <!-- Products Grid -->
+                <div class="store-main">
+                    <div class="store-toolbar">
+                        <button class="btn btn-outline btn-sm" id="filterToggle">
+                            <i class="fas fa-sliders-h"></i> Filters
+                        </button>
+                        <span class="products-count" id="productsCount">0 Products</span>
+                    </div>
+                    <div class="products-grid" id="productsGrid"></div>
+                    <div class="no-products" id="noProducts" style="display:none;">
+                        <i class="fas fa-search"></i>
+                        <h3>No Products Found</h3>
+                        <p>Try adjusting your filters or search terms.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <div class="footer-logo">NXT<span class="gold">8</span></div>
+                        <p>Premium fashion for the modern generation.</p>
+                        <div class="footer-social">
+                            <a href="https://www.facebook.com/profile.php?id=61591100455602" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/nxt8fashion221" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.tiktok.com/@nxt8.fashion" target="_blank"><i class="fab fa-tiktok"></i></a>
+                            <a href="tel:01146631132"><i class="fas fa-phone"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="products.html">Store</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Contact Info</h4>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-phone"></i> 01146631132</li>
+                            <li><i class="fab fa-whatsapp"></i> 01102612084</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 NXT8 Fashion. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/201102612084" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+    <button class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></button>
+
+    <script src="script.js"></script>
+</body>
+</html>
